@@ -1,0 +1,40 @@
+## Django 
+	# Create project 
+		. ```django-admin startproject <projectName>```
+	
+	# Create app
+		. ```django-admin startapp <apiName>```
+	
+	# DO after
+	go to project directory and find 'settings.py'  then register out 'api' in "INSTALLED_APPS"
+
+	# Create our api 
+	. create file called 'urls' then create 
+	``` 
+	from django .urls import path
+	from . import views
+	urlpatterns = [
+    		path('users/', views.getUsers),
+    	] ```
+
+	then in views.py 
+
+	``` 
+		def getUsers(request):
+		users = models.Users.objects.all()
+		resp = {"users": list(users.values())}
+		return JsonResponse(resp)
+	```
+
+	# Register our api 
+	in the project directory, go to 'urls.py' then import "Include" and then speciafy the app path 
+	exapmle
+	```
+		from django.urls import path, include
+		urlpatterns = [
+		path('api/', include('api.urls')),
+		]
+	```
+
+	# MySQL
+	```python manage.py inspectdb > models.py  ```
