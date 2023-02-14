@@ -1,10 +1,10 @@
-## Django 
-	# Create project 
-		. ```django-admin startproject <projectName>```
-	
+# Django
+	# Create project
+		. ```django-admin startproject < projectName >```
+
 	# Create app
-		. ```django-admin startapp <apiName>```
-	
+		. ```django-admin startapp < apiName >```
+
 	# DO after
 	go to project directory and find 'settings.py'  then register out 'api' in "INSTALLED_APPS"
 
